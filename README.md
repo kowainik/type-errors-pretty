@@ -22,8 +22,8 @@ can read the following blog post:
 
 * [A story told by Type Errors](https://kodimensional.dev/type-errors)
 
-The `type-errors-pretty` library allows you to write text of custom compile-time
-error messages with less hassle in the following way:
+The `type-errors-pretty` library allows you to write the text of custom
+compile-time error messages with less effort in the following way:
 
 ```haskell
 import Type.Errors.Pretty (type (<>), type (%))

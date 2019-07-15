@@ -3,7 +3,7 @@
 `type-errors-pretty` uses [PVP Versioning][1].
 The changelog is available [on GitHub][2].
 
-## 0.0.0.0
+## 0.0.0.0 — Jul 15, 2019
 
 * Initially created.
 

@@ -10,7 +10,7 @@ bug-reports:         https://github.com/chshersh/type-errors-pretty/issues
 license:             MPL-2.0
 license-file:        LICENSE
 author:              Dmitrii Kovanikov
-maintainer:          kovanikov@gmail.com
+maintainer:          Dmitrii Kovanikov <kovanikov@gmail.com>
 copyright:           2019 Dmitrii Kovanikov
 category:            Types, Type Errors
 build-type:          Simple
