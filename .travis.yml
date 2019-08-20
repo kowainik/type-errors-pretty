@@ -22,6 +22,7 @@ matrix:
     env: STACK_YAML="$TRAVIS_BUILD_DIR/stack.yaml"
 
   - language: nix
+    install: echo 'Running nix...'
     script: nix-shell --run 'cabal new-test'
 
 install:
