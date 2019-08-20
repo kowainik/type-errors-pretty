@@ -21,6 +21,10 @@ matrix:
   - ghc: 8.6.5
     env: STACK_YAML="$TRAVIS_BUILD_DIR/stack.yaml"
 
+  - language: nix
+    install: echo 'Running nix...'
+    script: nix-shell --run 'cabal new-test'
+
 install:
   # HLint check
   - curl -sSL https://raw.github.com/ndmitchell/neil/master/misc/travis.sh | sh -s -- hlint .
