@@ -19,12 +19,12 @@ matrix:
   - ghc: 8.6.5
   - ghc: 8.8.1
 
-  - ghc: 8.6.5
+  - ghc: 8.8.1
     env: STACK_YAML="$TRAVIS_BUILD_DIR/stack.yaml"
 
   - language: nix
     install: echo 'Running nix...'
-    script: nix-shell --run 'cabal new-test'
+    script: nix-shell --run 'cabal v2-test --enable-tests'
 
 install:
   # HLint check
@@ -39,7 +39,7 @@ install:
     else
       curl -sSL https://get.haskellstack.org/ | sh
       stack --version
-      stack build --system-ghc --test --bench --no-run-tests --no-run-benchmarks --ghc-options=-Werror
+      stack build --system-ghc --test --bench --no-run-tests --no-run-benchmarks
     fi
 
 script:

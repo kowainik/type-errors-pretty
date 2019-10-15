@@ -1,4 +1,1 @@
-resolver: lts-13.27
-
-ghc-options:
-  "$locals": -fhide-source-paths
+resolver: nightly-2019-10-15
