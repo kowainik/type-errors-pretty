@@ -1,11 +1,15 @@
 # type-errors-pretty
 
 ![pretty-bug](https://user-images.githubusercontent.com/4276606/61183911-eda86300-a679-11e9-9b8e-34c129469075.png)
-[![Build status](https://img.shields.io/travis/chshersh/type-errors-pretty.svg?logo=travis)](https://travis-ci.org/chshersh/type-errors-pretty)
+
+[![GitHub CI](https://github.com/chshersh/type-errors-pretty/workflows/CI/badge.svg)](https://github.com/chshersh/type-errors-pretty/actions)
+[![Build status](https://img.shields.io/travis/com/chshersh/type-errors-pretty/master?logo=travis)](https://travis-ci.com/chshersh/type-errors-pretty)
+[![Windows build status](https://ci.appveyor.com/api/projects/status/github/chshersh/type-errors-pretty?branch=master&svg=true)](https://ci.appveyor.com/project/chshersh/type-errors-pretty)
 [![Hackage](https://img.shields.io/hackage/v/type-errors-pretty.svg?logo=haskell)](https://hackage.haskell.org/package/type-errors-pretty)
 [![Stackage Lts](http://stackage.org/package/type-errors-pretty/badge/lts)](http://stackage.org/lts/package/type-errors-pretty)
 [![Stackage Nightly](http://stackage.org/package/type-errors-pretty/badge/nightly)](http://stackage.org/nightly/package/type-errors-pretty)
 [![MPL-2.0 license](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](LICENSE)
+
 
 > "It is important that we forgive ourselves for making mistakes. We need to learn
 > from our errors and move on."
