@@ -4,6 +4,10 @@
 {-# LANGUAGE UnicodeSyntax #-}
 
 {- |
+Copyright:  (c) 2019-2020 Dmitrii Kovanikov
+SPDX-License-Identifier: MPL-2.0
+Maintainer: Dmitrii Kovanikov <kovanikov@gmail.com>
+
 This module provides type-level functions and operators to make the job of
 writing text of custom type errors easier. The motivation behind using custom
 type errors is described in detail in the following blog post:
