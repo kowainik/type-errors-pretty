@@ -3,7 +3,7 @@
 ![pretty-bug](https://user-images.githubusercontent.com/4276606/61183911-eda86300-a679-11e9-9b8e-34c129469075.png)
 
 [![GitHub CI](https://github.com/chshersh/type-errors-pretty/workflows/CI/badge.svg)](https://github.com/chshersh/type-errors-pretty/actions)
-[![Build status](https://api.travis-ci.com/chshersh/type-errors-pretty.svg?logo=travis)](https://travis-ci.com/chshersh/type-errors-pretty)
+[![Build status](https://img.shields.io/travis/com/chshersh/type-errors-pretty/master?logo=travis)](https://travis-ci.com/chshersh/type-errors-pretty)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/github/chshersh/type-errors-pretty?branch=master&svg=true)](https://ci.appveyor.com/project/chshersh/type-errors-pretty)
 [![Hackage](https://img.shields.io/hackage/v/type-errors-pretty.svg?logo=haskell)](https://hackage.haskell.org/package/type-errors-pretty)
 [![Stackage Lts](http://stackage.org/package/type-errors-pretty/badge/lts)](http://stackage.org/lts/package/type-errors-pretty)
