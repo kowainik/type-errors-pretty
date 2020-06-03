@@ -5,8 +5,10 @@
 
 {- |
 Copyright:  (c) 2019-2020 Dmitrii Kovanikov
+            (c) 2020 Kowainik
 SPDX-License-Identifier: MPL-2.0
 Maintainer: Dmitrii Kovanikov <kovanikov@gmail.com>
+            Kowainik <xrom.xkov@gmail.com>
 
 This module provides type-level functions and operators to make the job of
 writing text of custom type errors easier. The motivation behind using custom

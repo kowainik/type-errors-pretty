@@ -18,4 +18,4 @@ The changelog is available [on GitHub][2].
 * Initially created.
 
 [1]: https://pvp.haskell.org
-[2]: https://github.com/chshersh/type-errors-pretty/releases
+[2]: https://github.com/kowainik/type-errors-pretty/releases
