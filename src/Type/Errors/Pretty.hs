@@ -1,11 +1,11 @@
-{-# LANGUAGE TypeFamilies  #-}
-{-# LANGUAGE TypeInType    #-}
-{-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE UnicodeSyntax #-}
-
+{-# LANGUAGE TypeFamilies         #-}
+{-# LANGUAGE TypeInType           #-}
+{-# LANGUAGE TypeOperators        #-}
+{-# LANGUAGE UnicodeSyntax        #-}
+{-# LANGUAGE UndecidableInstances #-}
 {- |
 Copyright:  (c) 2019-2020 Dmitrii Kovanikov
-            (c) 2020 Kowainik
+            (c) 2020-2021 Kowainik
 SPDX-License-Identifier: MPL-2.0
 Maintainer: Dmitrii Kovanikov <kovanikov@gmail.com>
             Kowainik <xrom.xkov@gmail.com>
@@ -69,12 +69,15 @@ module Type.Errors.Pretty
          -- * Reexports from "GHC.TypeLits"
        , TypeError
 
-         -- * Helper internal type families
+         -- * Helper type families
        , ToErrorMessage
+       , CommaSeparated
        ) where
 
-import GHC.TypeLits (ErrorMessage (..), Symbol, TypeError)
-
+import Data.Kind
+import GHC.TypeLits (AppendSymbol, ErrorMessage (..), Symbol, TypeError)
+import GHC.Generics
+import Type.Errors.Helpers (Intercalate)
 
 {- | Append two types automatically converting them to corresponding
 'ErrorMessage' constructors.
@@ -114,3 +117,34 @@ type family ToErrorMessage (t :: k) :: ErrorMessage where
     ToErrorMessage (t :: Symbol) = 'Text t
     ToErrorMessage (t :: ErrorMessage) = t
     ToErrorMessage t = 'ShowType t
+
+-- | Internal type family to go from a `Type` to a `Symbol` representation.
+-- The names for types without `Generic` instances have to be defined
+-- manually, and we do so for a handful of common types.
+type family TypeName (a :: Type) :: Symbol where
+  TypeName Char = "Char"
+  TypeName String = "String"
+  TypeName Int  = "Int"
+  TypeName (Maybe a) = AppendSymbol "Maybe " (TypeName a)
+  TypeName [a] = AppendSymbol "[" (AppendSymbol (TypeName a) "]")
+  TypeName (D1 ('MetaData name _ _ _) _ _) = name
+  TypeName a = TypeName (Rep a ())
+
+-- | Internal type family to map over a list of `Type`s while applying
+-- `TypeName` to each, returning a list of `Symbol`s.
+type family CommaSeparated' (ts :: [Type]) :: [Symbol] where
+  CommaSeparated' '[] = '[]
+  CommaSeparated' (t ': ts) = TypeName t ': CommaSeparated' ts
+
+{- | Type family to display a list of types separated by commas.
+
+@
+__data__ UserDefinedTypeDerivingGeneric = C1 | C2 __deriving__ Generic
+@
+>>> :kind! CommaSeparated '[Int, String, Maybe Int, [[[Char]]], UserDefinedTypeDerivingGeneric]
+CommaSeparated '[Int, String, Maybe Int, [[[Char]]], UserDefinedTypeDerivingGeneric] :: Symbol
+= "Int, String, Maybe Int, [[String]], UserDefinedTypeDerivingGeneric"
+
+-}
+type family CommaSeparated (ts :: [Type]) :: Symbol where
+  CommaSeparated ts = Intercalate ", " (CommaSeparated' ts)
