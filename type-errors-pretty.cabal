@@ -13,7 +13,7 @@ author:              Dmitrii Kovanikov
 maintainer:          Dmitrii Kovanikov <kovanikov@gmail.com>
                      Kowainik <xrom.xkov@gmail.com>
 copyright:           2019-2020 Dmitrii Kovanikov
-                     2020 Kowainik
+                     2020-2021 Kowainik
 category:            Types, Type Errors
 build-type:          Simple
 extra-doc-files:     README.md
@@ -21,15 +21,16 @@ extra-doc-files:     README.md
 tested-with:         GHC == 8.2.2
                      GHC == 8.4.4
                      GHC == 8.6.5
-                     GHC == 8.8.3
-                     GHC == 8.10.1
+                     GHC == 8.8.4
+                     GHC == 8.10.5
+                     GHC == 9.0.1
 
 source-repository head
   type:                git
   location:            https://github.com/kowainik/type-errors-pretty.git
 
 common common-options
-  build-depends:       base >= 4.10.1.0 && < 4.15
+  build-depends:       base >= 4.10.1.0 && < 4.16
 
   ghc-options:         -Wall
                        -Wcompat
@@ -73,7 +74,7 @@ test-suite doctest
   hs-source-dirs:      test
   main-is:             Doctest.hs
 
-  build-depends:       doctest >= 0.16 && < 0.18
+  build-depends:       doctest >= 0.16 && < 0.19
                      , Glob
 
   ghc-options:         -threaded
