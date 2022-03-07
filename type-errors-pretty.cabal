@@ -74,7 +74,7 @@ test-suite doctest
   hs-source-dirs:      test
   main-is:             Doctest.hs
 
-  build-depends:       doctest >= 0.16 && < 0.19
+  build-depends:       doctest >= 0.16 && < 0.20
                      , Glob
 
   ghc-options:         -threaded
